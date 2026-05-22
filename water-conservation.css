@@ -18,7 +18,7 @@ body {
     justify-content: space-between;
     gap: 20px;
     width: 100%;
-    border-bottom: 0.2px solid white;
+    border-bottom: 1px solid white;
     margin: 0;
     padding: 0;
 }
@@ -215,7 +215,7 @@ body {
     z-index: 2;
 }
 
-#home-section-overlay-text button {
+#home-section-overlay-text button, #error-section button {
     padding: 15px 30px;
     font-size: 16px;
     background-color: #007BFF;
@@ -225,9 +225,13 @@ body {
     cursor: pointer;
 }
 
-#home-section-overlay-text button:hover {
+#home-section-overlay-text button:hover, #error-section button:hover {
     background-color: #ffffff;
     color: #007BFF;
+}
+
+#search-button {
+    cursor: pointer;
 }
 
 /* About Section */
@@ -385,7 +389,7 @@ body {
 
 #action-plan-tips-container img {
     width: 150px;
-    height: 100px;
+    height: 160px;
 }
 
 #about-section, #home-section, #action-section {
@@ -485,4 +489,46 @@ body {
 
 #footer-socials b {
     color: white;
+}
+
+/* Error Section */
+#error-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url("https://t3.ftcdn.net/jpg/16/34/96/64/360_F_1634966409_pabypi9bVydg31tBoUwfPf4lp7C8hA6s.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+#error-section:after {
+    position: absolute;
+    content: "";
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,0.5);
+}
+
+#error-section div h2 {
+    font-size: 60px;
+    margin: 0;
+    text-align: center;
+}
+
+#error-section div {
+    z-index: 3;
+}
+
+#error-section div p {
+    font-size: 20px;
+    text-align: center;
 }
