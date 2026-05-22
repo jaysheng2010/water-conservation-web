@@ -62,7 +62,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
              <button>Home</button>
              <button>About Me</button>
              <button>Action Plan</button>
-             <div>
+             <div id="search-button">
                <i class="fa-solid fa-magnifying-glass" style="color: white; font-size: 20px;"></i>
                <p>Search</p>
              </div>
@@ -76,7 +76,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
              <p>Lorem ipsum dolor sit amet.</p>
           </div>
-          <button>Learn More</button>
+          <button onclick="showErrorPage()">Learn More</button>
       </div>
         <!-- <img src="https://img.freepik.com/premium-vector/top-tips-logo-with-light-bulb-top-tips-badge_349999-1202.jpg" alt="Tips Image"> -->
     </section>
@@ -102,7 +102,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             </div>
 
             <div class="about-me-details-section">
-              <h3>Skills</h3>
+              <h3>Education</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
             </div>
         </div>
@@ -110,6 +110,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
     <section id="action-section">
       <h2>Action Plan</h2>
+      <br>
       <div id="action-plan-content-container">
         <div>
           <img src="https://img.magnific.com/premium-vector/water-logo-design-concept_761413-7077.jpg?semt=ais_hybrid&w=740&q=80" alt="">
@@ -130,7 +131,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       </div>
 
       <div id="action-plan-tips-container">
-        <img src="https://img.freepik.com/premium-vector/top-tips-logo-with-light-bulb-top-tips-badge_349999-1202.jpg" alt="">
+        <img src="https://cdn-icons-png.flaticon.com/512/9908/9908215.png" alt="Image of Tips">
         <div id="action-plan-tips-details">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
@@ -188,4 +189,36 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <b>Copyright © 2023 Water Conservation. All rights reserved.</b>
       </div>
     </section>
+
+    <section id="error-section">
+      <div>
+        <h2>404</h2>
+        <p>Page not found</p>
+        <button onclick="hideErrorPage()">Go Home</button>
+      </div>
+    </section>
+ </body>
+
+ <script>
+function showErrorPage() {
+    document.getElementById('error-section').style.opacity = '1';
+    document.getElementById('error-section').style.pointerEvents = 'all';
+    for (let x = 0; x < document.getElementsByTagName('section').length; x++) {
+        if (document.getElementsByTagName('section')[x].id != 'error-section') {
+            document.getElementsByTagName('section')[x].style.opacity = '0';
+        }
+    }
+}
+
+function hideErrorPage() {
+    document.getElementById('error-section').style.opacity = '0';
+    document.getElementById('error-section').style.pointerEvents = 'none';
+    for (let x = 0; x < document.getElementsByTagName('section').length; x++) {
+        if (document.getElementsByTagName('section')[x].id != 'error-section') {
+            document.getElementsByTagName('section')[x].style.opacity = '1';
+        }
+    }
+}
+ </script>
+
 </html>
